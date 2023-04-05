@@ -31,7 +31,7 @@ class TasksController < ApplicationController
   end
 
   def order_tasks
-    @tasks = Task.display_order
+    @tasks = Task.order_by_deadline
   end
 
   def task_params

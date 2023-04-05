@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
   validates :title, presence: true
 
-  scope :display_order, -> { order(:deadline) }
+  scope :order_by_deadline, -> { order(:deadline) }
 end
