@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:destroy]
 
   def index
-    order_tasks
+    @tasks = Task.display_order
   end
 
   def new
@@ -28,10 +28,6 @@ class TasksController < ApplicationController
 
   def set_task
     @task = Task.find(params[:id])
-  end
-
-  def order_tasks
-    @tasks = Task.order_by_deadline
   end
 
   def task_params
